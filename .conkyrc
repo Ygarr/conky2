@@ -69,8 +69,9 @@ ${goto 280}${font Caviar Dreams:size=13,weight:bold}${color4}CPU
 
 
 ${goto 0}${voffset -9}${font Poky:pixelsize=18}${font}${goto 30}${color3}${font Caviar Dreams:size=12}${color3}Battery: ${font}${color}${exec cat /sys/class/power_supply/BAT1/capacity}
-${voffset -220}${goto 140}${font Caviar Dreams:size=10}${color3}${alignr} Weather${font}
-${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ LFMT temperature temperature 30} °C${font}${color4}
+${voffset -220}${goto 140}${font Caviar Dreams:size=10}${color3}${alignr} Temperature${font}
+#${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ LFMT temperature temperature 30} °C${font}${color4}
+${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input | cut -c-2 }°C${font}${color4}
 ${voffset 195}${goto 280}${font Caviar Dreams:size=13,weight:bold}${color4}Net${color2}${voffset 2}${offset -1}
 
 ${goto 100}${voffset -20}${font Neuropolitical:size=24}${time %H:%M:%S}
