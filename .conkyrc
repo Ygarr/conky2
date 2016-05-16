@@ -68,15 +68,16 @@ ${goto 55}${font Caviar Dreams:size=13,weight:bold}${color4}Mem
 ${voffset -40}
 ${goto 280}${font Caviar Dreams:size=13,weight:bold}${color4}CPU
 
-
+${goto 0}${voffset -9}${if_match ${battery_percent BAT0} <= 22}${font Caviar Dreams:size=12}${color red}1${font}${color}${else}${if_match ${goto 30}${battery_percent BAT0} <= 46}${font Caviar Dreams:size=12}${font}${else}${if_match ${battery_percent BAT0} <= 65}${font Caviar Dreams:size=12}3${font}${else}${if_match ${battery_percent BAT0} <= 85}${font Caviar Dreams:size=12}${font}${else}${if_match ${battery_percent BAT0} <= 100}${font Poky:pixelsize=18}${font}${endif}${endif}${endif}${endif}${endif}${goto 60}${color3}${font Caviar Dreams:size=12}${color}Battery: ${font}${battery BAT0}
 #${goto 0}${voffset -9}${font Poky:pixelsize=18}${font}${goto 30}${color3}${font Caviar Dreams:size=12}${color3}Battery: ${font}${color}${exec cat /sys/class/power_supply/BAT1/capacity} %
-${goto 0}${voffset -9}${font Poky:pixelsize=18}${font}${goto 30}${color3}${font Caviar Dreams:size=12}${color3}Battery: ${font}${color}${exec cat /sys/class/power_supply/BAT0/capacity} %
-${voffset -200}${goto 140}${font Caviar Dreams:size=10}${color3}${alignr} Weather${font}
+#${goto 0}${voffset -9}${font Poky:pixelsize=18}${font}${goto 30}${color3}${font Caviar Dreams:size=12}${color3}Battery: ${font}${color}${exec cat /sys/class/power_supply/BAT0/capacity} %
+${voffset -190}${goto 300}${font Caviar Dreams:size=10}${color3}${alignr} Weather${font}
 #First Go to This link: http://weather.noaa.gov , Here you will select your country and city than it will show current weather situation of your country. You will see code in red, just copy four word code.
 #${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ LFMT temperature temperature 30} °C${font}${color4}
-${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ UKON temperature weather 30} °C${font}${color4}
-${goto 140}${font Caviar Dreams:size=10}${color3}${alignr} Temperature${font}
-${goto 190}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input | cut -c-2 }°C${font}${color4}
-${voffset 160}${goto 280}${font Caviar Dreams:size=13,weight:bold}${color4}Net${color2}${voffset 2}${offset -1}
+${goto 320}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ UKON temperature weather 30} °C${font}${color4}
+${goto 300}${font Caviar Dreams:size=10}${color3}${alignr} Temperature${font}
+${goto 320}${font Caviar Dreams:size=16,weight:bold}${color4}${alignr}${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input | cut -c-2 }°C${font}${color4}
+${voffset 185}${goto 280}${font Caviar Dreams:size=13,weight:bold}${color4}Net${color2}${voffset 2}${offset -1}
+
 ${goto 100}${voffset -20}${font Neuropolitical:size=24}${time %H:%M:%S}
-${goto 100}${voffset -75}${font Ubuntu:size=14}${color2}${time %A}#${color 222222}${hr} # No Neuropolitical cyrillic
+${goto 100}${voffset -75}${font Caviar Dreams:size=14}${color2}${time %A}#${color 222222}${hr} # No Neuropolitical cyrillic
